@@ -1,9 +1,7 @@
 import { Card, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { MusicNote } from '@mui/icons-material'
+import { MenuBar } from './components/MenuBar'
 
 const apiURL = "https://grocery-list-0aqm.onrender.com";
 
@@ -13,6 +11,7 @@ function App() {
 
   return (
     <>
+      <MenuBar />
       <Card className='container'>
         
       </Card>
