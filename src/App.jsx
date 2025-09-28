@@ -1,7 +1,6 @@
 import { Card, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
 import './App.css'
-import { MenuBar } from './components/MenuBar'
 
 const apiURL = "https://grocery-list-0aqm.onrender.com";
 
@@ -10,12 +9,9 @@ function App() {
   const [lists, setLists] = useState([]);
 
   return (
-    <>
-      <MenuBar />
-      <Card className='container'>
-        
-      </Card>
-    </>
+    <div className="border-2 border-red-500 h-full w-full">
+      <h1>Hello World</h1>
+    </div>
   )
 }
 
