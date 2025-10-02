@@ -5,6 +5,14 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+  SignOutButton,
+} from '@clerk/clerk-react';
 
 export const MenuBar = () => {
   return (
@@ -23,7 +31,35 @@ export const MenuBar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Groceries
           </Typography>
-          <Button color="inherit">Login</Button>
+          
+          {/* Show authentication buttons based on user state */}
+          <SignedOut>
+            <Box sx={{ display: 'flex', gap: 1 }}>
+              <SignInButton mode="modal">
+                <Button color="inherit">Login</Button>
+              </SignInButton>
+              <SignUpButton mode="modal">
+                <Button color="inherit" variant="outlined" sx={{ borderColor: 'white', color: 'white' }}>
+                  Sign Up
+                </Button>
+              </SignUpButton>
+            </Box>
+          </SignedOut>
+          
+          <SignedIn>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <UserButton 
+                appearance={{
+                  elements: {
+                    avatarBox: {
+                      width: 32,
+                      height: 32,
+                    }
+                  }
+                }}
+              />
+            </Box>
+          </SignedIn>
         </Toolbar>
       </AppBar>
     </Box>
